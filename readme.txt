@@ -9,11 +9,11 @@ Replace the WP-version with a random string &lt; WP 2.4 and eliminate WP-version
 == Description ==
 Security your WordPress-Installation and eliminate or replace your wp-version on easy way with a small plugin.
 
-If you’re running an older version of WordPress, anyone can view source to see what attacks might work against your blog. This plugin replace the WP-version with a random string &lt; WP 2.4 and eliminate WP-version &gt; WP 2.4.
+If you're running an older version of WordPress, anyone can view source to see what attacks might work against your blog. This plugin replace the WP-version with a random string &lt; WP 2.4 and eliminate WP-version &gt; WP 2.4.
 
 Please visit [the official website](http://bueltge.de/wordpress-version-verschleiern-plugin/602/ "Replace WP-Version") for further details and the latest information on this plugin.
 
-more security-informations: [WordPress sicherer machen (german)](http://wordpress-buch.bueltge.de/wordpress-sicherer-machen/30/ "WordPress sicherer machen (german)")
+ &raquo; more security-informations: [WordPress sicherer machen](http://wordpress-buch.bueltge.de/wordpress-sicherer-machen/30/ "WordPress sicherer machen") (german)
 
 == Installation ==
 1. Unpack the download-package
