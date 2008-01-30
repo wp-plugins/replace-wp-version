@@ -13,6 +13,8 @@ If you’re running an older version of WordPress, anyone can view source to see w
 
 Please visit [the official website](http://bueltge.de/wordpress-version-verschleiern-plugin/602/ "Replace WP-Version") for further details and the latest information on this plugin.
 
+more security-informations: [WordPress sicherer machen (german)](http://wordpress-buch.bueltge.de/wordpress-sicherer-machen/30/ "WordPress sicherer machen (german)")
+
 == Installation ==
 1. Unpack the download-package
 1. Upload all files to the `/wp-content/plugins/` directory
