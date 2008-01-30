@@ -1,7 +1,7 @@
 === Replace WP-Version ===
 Contributors: Bueltge
 Donate link: http://bueltge.de/wunschliste/
-Tags: spam, protection, javascript, rss, post
+Tags: protection, version, security
 Requires at least: 1.5
 
 Replace the WP-version with a random string &lt; WP 2.4 and eliminate WP-version &gt; WP 2.4
