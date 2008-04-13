@@ -4,10 +4,10 @@ Donate link: http://bueltge.de/wunschliste/
 Tags: protection, version, security
 Requires at least: 1.5
 
-Replace the WP-version with a random string &lt; WP 2.4 and eliminate WP-version &gt; WP 2.4
+Replace the WP-version with a random string &lt; WP 2.4/5 and eliminate WP-version &gt; WP 2.4/5
 
 == Description ==
-Security your WordPress-Installation and eliminate or replace your wp-version on easy way with a small plugin.
+Security your WordPress-Installation and eliminate or replace your wp-version and database-version on easy way with a small plugin.
 
 If you're running an older version of WordPress, anyone can view source to see what attacks might work against your blog. This plugin replace the WP-version with a random string &lt; WP 2.4 and eliminate WP-version &gt; WP 2.4.
 
