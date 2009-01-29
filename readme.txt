@@ -3,6 +3,7 @@ Contributors: Bueltge
 Donate link: http://bueltge.de/wunschliste/
 Tags: protection, version, security
 Requires at least: 1.5
+Tested up to: 2.8-bleeding-edge
 
 Replace the WP-version with a random string &lt; WP 2.4/5 and eliminate WP-version &gt; WP 2.4/5
 
