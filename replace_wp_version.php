@@ -4,7 +4,7 @@
  * Plugin URI: http://bueltge.de/wordpress-version-verschleiern-plugin/602/
  * Description: Replace the WP-version with a random string &lt; WP 2.4 and eliminate WP-version &gt; WP 2.4
  * Author: Frank Bueltge
- * Version: 1.1.0
+ * Version: 1.1.1
  * License: GPLv2
  * Author URI: http://bueltge.de/
  */
@@ -30,6 +30,8 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 			
 		static private $classobj;
 		
+		static public $wpversion;
+		
 		/**
 		 * construct
 		 * 
@@ -43,9 +45,11 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 			if ( is_admin() )
 				return NULL;
 			
-			add_action( 'init',              array( $this, 'replace_wp_version' ), 1 );
-			add_filter( 'script_loader_src', array( $this, 'filter_script_loader' ) );
-			add_filter( 'style_loader_src',  array( $this, 'filter_script_loader' ) );
+			$this -> wpversion = $GLOBALS['wp_version'];
+			
+			add_action( 'init',              array( $this, 'replace_wp_version' ), 2 );
+			add_filter( 'script_loader_src', array( $this, 'filter_script_loader' ), 1 );
+			add_filter( 'style_loader_src',  array( $this, 'filter_script_loader' ), 1 );
 		}
 		
 		/**
@@ -111,7 +115,7 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 		public function filter_script_loader ( $src ) {
 			
 			// Separate the version parameter.
-			$src = explode( '?ver=' . $this->wpversion, $src );
+			$src = explode( '?ver=' . $this -> wpversion, $src );
 			
 			// Just the URI without the query string.
 			return $src[0];
