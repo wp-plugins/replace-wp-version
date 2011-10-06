@@ -3,8 +3,8 @@ Contributors: Bueltge
 Donate link: http://bueltge.de/wunschliste/
 Tags: protection, version, security, privacy
 Requires at least: 1.5
-Tested up to: 3.3-alpha
-Stable tag: 1.1.1
+Tested up to: 3.3
+Stable tag: 1.1.2
 
 Replace the WP-version with a random string &lt; WP 2.4/5 and eliminate WP-version &gt; WP 2.4/5, also on Feed and style- and script-urls
 
@@ -36,6 +36,9 @@ Please visit [the official website](http://bueltge.de/wordpress-version-verschle
 Please visit [the official website](http://bueltge.de/wordpress-version-verschleiern-plugin/602/ "Replace WP-Version") and let him know your care or see the [wishlist](http://bueltge.de/wunschliste/ "Wishlist") of the author.
 
 == Changelog ==
+= 1.1.2 =
+* Add XMLRPC_REQUEST for version optional check form extern
+
 = 1.1.1 =
 * fix vor undefinned var; remove php notice
 
