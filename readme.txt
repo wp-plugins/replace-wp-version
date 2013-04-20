@@ -3,7 +3,7 @@ Contributors: Bueltge
 Donate link: http://bueltge.de/wunschliste/
 Tags: protection, version, security, privacy
 Requires at least: 1.5
-Tested up to: 3.3
+Tested up to: 3.6-Beta
 Stable tag: 1.1.2
 
 Replace the WP-version with a random string &lt; WP 2.4/5 and eliminate WP-version &gt; WP 2.4/5, also on Feed and style- and script-urls

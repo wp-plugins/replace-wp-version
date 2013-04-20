@@ -25,9 +25,17 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+if ( function_exists( 'add_filter' ) ) {
+	add_action( 'plugins_loaded', array( 'Replace_Wp_Version', 'get_object' ) );
+} else {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
+
 if ( ! class_exists('Replace_Wp_Version') ) {
 	class Replace_Wp_Version {
-			
+		
 		static private $classobj;
 		
 		static public $wpversion;
@@ -114,20 +122,8 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 		
 		public function filter_script_loader ( $src ) {
 			
-			// Separate the version parameter.
-			$src = explode( '?ver=' . $this -> wpversion, $src );
-			
-			// Just the URI without the query string.
-			return $src[0];
+			return remove_query_arg( 'ver', $src );
 		}
 		
 	} // end class
 } // end if class
-
-if ( function_exists('add_action') && class_exists('Replace_Wp_Version') ) {
-	add_action( 'plugins_loaded', array( 'Replace_Wp_Version', 'get_object' ) );
-} else {
-	header( 'Status: 403 Forbidden' );
-	header( 'HTTP/1.1 403 Forbidden' );
-	exit();
-}
