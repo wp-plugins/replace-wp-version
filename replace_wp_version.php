@@ -4,8 +4,8 @@
  * Plugin URI: http://bueltge.de/wordpress-version-verschleiern-plugin/602/
  * Description: Replace the WP-version with a random string &lt; WP 2.4 and eliminate WP-version &gt; WP 2.4
  * Author: Frank Bueltge
- * Version: 1.1.2
- * License: GPLv3
+ * Version: 1.1.3
+ * License: GPLv2+
  * Author URI: http://bueltge.de/
  */
 
@@ -67,7 +67,7 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 		 * @access  public
 		 * @return  $classobj
 		 */
-		public function get_object () {
+		public static function get_object () {
 			
 			if ( NULL === self :: $classobj )
 				self :: $classobj = new self;
