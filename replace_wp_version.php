@@ -36,9 +36,9 @@ if ( function_exists( 'add_filter' ) ) {
 if ( ! class_exists('Replace_Wp_Version') ) {
 	class Replace_Wp_Version {
 		
-		static private $classobj;
+		protected static $classobj;
 		
-		static public $wpversion;
+		public static $wpversion;
 		
 		/**
 		 * construct
@@ -53,7 +53,7 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 			if ( is_admin() || ( defined( 'XMLRPC_REQUEST' ) && XMLRPC_REQUEST ) )
 				return NULL;
 			
-			$this -> wpversion = $GLOBALS['wp_version'];
+			self::$wpversion = $GLOBALS['wp_version'];
 			
 			add_action( 'init',              array( $this, 'replace_wp_version' ), 2 );
 			add_filter( 'script_loader_src', array( $this, 'filter_script_loader' ), 1 );
@@ -69,10 +69,10 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 		 */
 		public static function get_object () {
 			
-			if ( NULL === self :: $classobj )
-				self :: $classobj = new self;
+			if ( NULL === self::$classobj )
+				self::$classobj = new self;
 		
-			return self :: $classobj;
+			return self::$classobj;
 		}
 		
 		/**
