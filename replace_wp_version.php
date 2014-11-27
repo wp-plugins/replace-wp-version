@@ -1,29 +1,14 @@
 <?php
 /**
  * Plugin Name: Replace WP-Version
- * Plugin URI: http://bueltge.de/wordpress-version-verschleiern-plugin/602/
+ * Plugin URI:  http://bueltge.de/wordpress-version-verschleiern-plugin/602/
  * Description: Replace the WP-version with a random string &lt; WP 2.4 and eliminate WP-version &gt; WP 2.4
- * Author: Frank Bueltge
- * Version: 1.1.3
- * License: GPLv2+
- * Author URI: http://bueltge.de/
+ * Author:      Frank Bueltge
+ * Version:     1.1.4
+ * License:     GPLv2+
+ * Author URI:  http://bueltge.de/
  */
 
-/**
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-*/
 
 if ( function_exists( 'add_filter' ) ) {
 	add_action( 'plugins_loaded', array( 'Replace_Wp_Version', 'get_object' ) );
@@ -38,8 +23,6 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 		
 		protected static $classobj;
 		
-		public static $wpversion;
-		
 		/**
 		 * construct
 		 * 
@@ -52,8 +35,6 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 			
 			if ( is_admin() || ( defined( 'XMLRPC_REQUEST' ) && XMLRPC_REQUEST ) )
 				return NULL;
-			
-			self::$wpversion = $GLOBALS['wp_version'];
 			
 			add_action( 'init',              array( $this, 'replace_wp_version' ), 2 );
 			add_filter( 'script_loader_src', array( $this, 'filter_script_loader' ), 1 );
@@ -95,13 +76,15 @@ if ( ! class_exists('Replace_Wp_Version') ) {
 		public function replace_wp_version () {
 			
 			// random values
+			/* not more helpful
 			$GLOBALS['wp_version'] = intval( rand(0, 9999) );
 			$wp_db_version         = intval( rand(9999, 99999) );
 			$manifest_version      = intval( rand(99999, 999999) );
 			$tinymce_version       = intval( rand(999999, 9999999) );
+			*/
 			
 			// eliminate version for wordpress >= 2.4
-			if ( function_exists('the_generator') ) {
+			if ( function_exists( 'the_generator' ) ) {
 				
 				remove_filter( 'wp_head', 'wp_generator' );
 				$actions = array( 

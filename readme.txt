@@ -36,6 +36,9 @@ Please visit [the official website](http://bueltge.de/wordpress-version-verschle
 Please visit [the official website](http://bueltge.de/wordpress-version-verschleiern-plugin/602/ "Replace WP-Version") and let him know your care or see the [wishlist](http://bueltge.de/wunschliste/ "Wishlist") of the author.
 
 == Changelog ==
+= 1.1.4 (11/27/2014) =
+* Remove replacements for globals of WP, not helpful
+
 = 1.1.3 (10/02/2014) =
 * Fixed PHP Warning in scrict mode
 
